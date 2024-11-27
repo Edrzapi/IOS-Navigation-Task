@@ -16,14 +16,36 @@ struct MenuView: View {
                 }
             
             HStack(spacing: 0) {
-               // Fill in the gaps to navigate to screens below:
+                VStack(alignment: .leading, spacing: 20) {
+                    NavigationLink(destination: HomeView()) {
+                        Text("Home")
+                            .modifier(ButtonStyleModifier())
+                    }
+                    NavigationLink(destination: BasketView()) {
+                        Text("Basket")
+                            .modifier(ButtonStyleModifier())
+                    }
+                    NavigationLink(destination: AboutUsView()) {
+                        Text("About Us")
+                            .modifier(ButtonStyleModifier())
+                    }
+                    NavigationLink(destination: AccountView()) {
+                        Text("Account")
+                            .modifier(ButtonStyleModifier())
+                    }
+                    NavigationLink(destination: LogoutView()) {
+                        Text("Logout")
+                            .modifier(ButtonStyleModifier())
+                    }
+                    Spacer()
                 }
                 .padding()
                 .frame(width: 250)
-                .background(Color.white)
+                .background(Color.white) 
                 .cornerRadius(10)
                 
                 Spacer()
             }
         }
+    }
 }
